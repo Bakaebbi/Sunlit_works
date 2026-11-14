@@ -1,0 +1,6 @@
+/* Progressive layout used only when JavaScript is disabled. */
+.view-switch, .sound-toggle, .map-tools, .gallery-browse, #about-trigger { display: none !important; }
+.projects-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; padding-block: 150px 100px; }
+.project { width: 100% !important; margin: 0 !important; }
+.project-cover { display: block; aspect-ratio: 1; }
+.project-cover > img { height: 100%; object-fit: cover; }

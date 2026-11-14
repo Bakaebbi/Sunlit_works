@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bakaebbi.github.io/Sunlit_works/sitemap.xml
