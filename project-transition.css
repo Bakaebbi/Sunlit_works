@@ -1,0 +1,38 @@
+/* Shared-element navigation: the gallery artwork becomes the case cover. */
+
+::view-transition-group(*) {
+    animation-duration: 650ms;
+    animation-timing-function: cubic-bezier(.22, 1, .36, 1);
+}
+
+::view-transition-old(root) {
+    animation: project-scene-out 240ms ease-out both;
+}
+
+::view-transition-new(root) {
+    animation: project-scene-in 650ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+::view-transition-image-pair(*) { overflow: clip; }
+@keyframes project-scene-out {
+    to { opacity: 0; }
+}
+
+@keyframes project-scene-in {
+    from { opacity: 0; transform: translateY(18px) scale(.985); }
+    to { opacity: 1; transform: none; }
+}
+
+@supports not (view-transition-name: none) {
+    .case-main { animation: project-scene-in 550ms cubic-bezier(.22, 1, .36, 1) both; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .case-main { animation: none; }
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) { animation: none !important; }
+}
+
+/* The navigation remains a shared layer while the artwork changes pages. */
+.header, .case-header { view-transition-name: site-header; }

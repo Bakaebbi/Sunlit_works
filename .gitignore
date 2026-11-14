@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.idea/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+public/assets/optimized/
+public/assets/social-preview.jpg
+public/assets/favicon.svg
+public/data/projects.json
+public/robots.txt
+public/sitemap.xml
